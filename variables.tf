@@ -9,7 +9,7 @@ variable "api_private_key_path" {
 }
 
 variable "availability_domain" {
-  description = "availability_domain"
+  description = "Availability Domain"
   type        = string
 }
 
