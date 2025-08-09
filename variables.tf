@@ -8,6 +8,11 @@ variable "api_private_key_path" {
   type        = string
 }
 
+variable "availability_domain" {
+  description = "availability_domain"
+  type        = string
+}
+
 variable "tenancy_id" {
   description = "Tenancy ID where to create resources for Tenancy"
   type        = string
