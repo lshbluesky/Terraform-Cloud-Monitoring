@@ -68,3 +68,35 @@ variable "public_subnet_id" {
   description = "provide existing public subnet OCID"
   type        = string
 }
+
+# Private subnet variables
+variable "private_subnet_cidr_block" {
+  description = "OCI private subnet CIDR block range"
+  type        = string
+}
+
+variable "private_subnet_display_name" {
+  description = "provide a descriptive name for the private subnet - this is what you will see displayed in the OCI console"
+  type        = string
+}
+
+variable "private_subnet_prohibit_public_ip_on_vnic" {
+  description = "Allow public IP address to the VNIC"
+  type        = bool
+}
+
+# Public subnet variables
+variable "public_subnet_cidr_block" {
+  description = "OCI public subnet CIDR block range"
+  type        = string
+}
+
+variable "public_subnet_display_name" {
+  description = "provide a descriptive name for the public subnet - this is what you will see displayed in the OCI console"
+  type        = string
+}
+
+variable "public_subnet_prohibit_public_ip_on_vnic" {
+  description = "Allow public IP address to the VNIC"
+  type        = bool
+}
