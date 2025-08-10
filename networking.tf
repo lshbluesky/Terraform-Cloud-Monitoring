@@ -34,3 +34,17 @@ resource "oci_core_internet_gateway" "shl_internet_gateway" {
   display_name   = "Internet_GTW_for_${var.vcn_display_name}"
   vcn_id         = oci_core_vcn.shl-VCN.*.id[0]
 }
+
+resource "oci_core_route_table" "shl_route_table" {
+  count          = (var.create_new_vcn) ? 1 : 0
+  compartment_id = var.compartment_id
+  display_name   = "shl-Route-Table"
+  vcn_id         = oci_core_vcn.shl-VCN.*.id[0]
+
+  route_rules {
+    network_entity_id = oci_core_internet_gateway.shl_internet_gateway.*.id[0]
+    description       = "Route rule internet access for ${var.vcn_display_name}"
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+  }
+}
