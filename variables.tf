@@ -100,3 +100,49 @@ variable "public_subnet_prohibit_public_ip_on_vnic" {
   description = "Allow public IP address to the VNIC"
   type        = bool
 }
+
+# Compute variables
+variable "instance_shape" {
+  description = "value"
+  type        = string
+}
+
+variable "instance_flex_memory_in_gbs" {
+  description = "(Updatable) The total amount of memory available to the instance, in gigabytes."
+  type        = number
+}
+
+variable "instance_flex_ocpus" {
+  description = "(Updatable) The total number of OCPUs available to the instance."
+  type        = number
+}
+
+variable "instance_create_vnic_details_assign_public_ip" {
+  description = "To allow compute connectivity from internet"
+  type        = bool
+}
+
+variable "instance_display_name" {
+  description = "provide a descriptive name for the compute instance - this is what you will see displayed in the OCI console"
+  type        = string
+}
+
+variable "public_ssh_key" {
+  description = "Add your public ssh key - for provisioning your compute instance"
+  type        = string
+}
+
+variable "private_ssh_key" {
+  description = "Add your private ssh key - for accessing your compute instance after creation"
+  type        = string
+}
+
+variable "create_linux_instance" {
+  description = "Boolean variable to specify whether to provision a Linux instances"
+  type        = bool
+}
+
+variable "linux_image_ocid" {
+  description = "OCID of the Linux image to use"
+  type        = string
+}
