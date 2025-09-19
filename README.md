@@ -176,7 +176,7 @@
 - **문제 :** 외부 인터넷에서 Oracle Cloud의 Linux VM 인스턴스로 가동 중인 WordPress 블로그 사이트에 접속할 수 없는 문제.
   - **고민 :** Oracle Cloud 콘솔 사이트에서 VCN 보안 규칙 - 수신 허용 규칙에 80, 443 포트를 수신 허용으로 설정하여도 접속이 되지 않음.
   - **해결 :** Oracle Cloud에서 생성되는 Linux VM 인스턴스는 기본적으로 ufw가 아닌 iptables를 사용하고 있었으며, iptables 방화벽에서도 80, 443 포트의 수신 규칙을 허용으로 설정하여 해결하였습니다. 콘솔 보안 규칙뿐만이 아닌 방화벽 규칙에서도 수신 허용하는 규칙이 필요하였으며, 추가로 자신의 컴퓨터에서만 접속할 수 있도록 소스 CIDR 값을 자신의 공인 IP 주소 대역으로 설정하여 보안성을 높였습니다.
-  <img src="./Assets/iptables.png">
+    <img src="./Assets/iptables.png">
 
 <br>
 
